@@ -1,0 +1,29 @@
+{
+  "name": "asterisk-dialogflow-rtp-audioserver",
+  "version": "1.0.0",
+  "description": "Takes Audio RTP and sends it to Dialogflog and vice-versa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nimbleape/asterisk-dialogflow-rtp-audioserver.git"
+  },
+  "main": "index.js",
+  "author": "Dan Jenkins <dan@nimblea.pe>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "async-mqtt": "^2.4.2",
+    "config": "^3.2.4",
+    "dgram-as-promised": "^3.0.3",
+    "dialogflow": "^1.1.2",
+    "mqtt": "^3.0.0",
+    "node-rtp": "^0.1.1",
+    "pino": "^5.14.0"
+  },
+  "devDependencies": {
+    "pino-pretty": "^3.4.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start-pretty": "node index.js | pino-pretty"
+  }
+}
