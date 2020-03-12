@@ -25,7 +25,8 @@ async function createNewGoogleStream(payload) {
 
     const dialogFlowConfig = {
         projectId: config.get('dialogflow.project'),
-        sessionId: payload.channelId
+        sessionId: payload.channelId,
+        initialEventName: config.get('dialogflow.initialEventName')
     }
 
     let dialogflowConnector = new DialogFlowConnector(audioConfig, dialogFlowConfig, payload.channelId, log);

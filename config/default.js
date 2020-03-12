@@ -14,6 +14,7 @@ module.exports = {
         //     client_email: response.dialogFlowClientEmail
         //   }
         keyFilename: `./path-to-json.json`,
-        project: 'project-id'
+        project: 'project-id',
+        initialEventName: 'WELCOME'
     }
 }
