@@ -9,12 +9,35 @@ module.exports = {
         prefix: 'dialogflow-asterisk'
     },
     dialogflow: {
-        //credentials: {
-        //     private_key: response.dialogFlowPrivateKey,
-        //     client_email: response.dialogFlowClientEmail
-        //   }
-        keyFilename: `./path-to-json.json`,
+        auth: {
+            //credentials: {
+            //     private_key: response.dialogFlowPrivateKey,
+            //     client_email: response.dialogFlowClientEmail
+            //   }
+            keyFilename: `./path-to-json.json`,
+        },
         project: 'project-id',
-        initialEventName: 'WELCOME'
+        initialEventName: 'WELCOME',
+        enableOutputSpeech: true,
+        audioInputConfig: {
+            audioEncoding: 'AUDIO_ENCODING_LINEAR_16',
+            sampleRateHertz: 16000,
+            languageCode: 'en-US'
+        },
+        audioOutputConfig: {
+            audioEncoding: 'OUTPUT_AUDIO_ENCODING_LINEAR_16',
+            sampleRateHertz: 8000, // should be the same as dialogFlowAudioInputConfig.sampleRateHertz but Asterisk doesnt like 16000 back
+            /*
+              comment the below object if you dont want to change any aspects of the generated voice
+             */
+            synthesizeSpeechConfig: {
+                speakingRate: 1,
+                pitch: 5,
+                volumeGainDb: 0,
+                voice: {
+                    ssmlGender: `SSML_VOICE_GENDER_FEMALE`
+                }
+            }
+        }
     }
 }
