@@ -17,19 +17,18 @@ async function createNewGoogleStream(payload) {
 
     log.info({ payload }, 'New Stream of audio from Asterisk to send to Dialogflow');
 
-    const audioConfig = {
-        audioEncoding: 'AUDIO_ENCODING_LINEAR_16',
-        sampleRateHertz: 16000,
-        languageCode: 'en-US'
-    };
-
     const dialogFlowConfig = {
+        auth: config.get('dialogflow.auth'),
         projectId: config.get('dialogflow.project'),
         sessionId: payload.channelId,
-        initialEventName: config.get('dialogflow.initialEventName')
-    }
+        initialEventName: config.get('dialogflow.initialEventName'),
+        enableOutputSpeech: config.get('dialogflow.enableOutputSpeech')
+    };
 
-    let dialogflowConnector = new DialogFlowConnector(audioConfig, dialogFlowConfig, payload.channelId, log);
+    let dialogflowConnector = new DialogFlowConnector({
+        input: config.get('dialogflow.audioInputConfig'),
+        output: config.get('dialogflow.audioOutputConfig')
+    }, dialogFlowConfig, payload.channelId, log);
 
     let audioDataStream = rtpServer.createStream(payload.port);
 
