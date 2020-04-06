@@ -37,8 +37,8 @@ async function createNewGoogleStream(payload) {
     connectorsMap.set(payload.channelId, dialogflowConnector);
 
     dialogflowConnector.on('message', async (data) => {
-        log.info(`Got a message sending to ${mqttTopicPrefix}/events`);
-        await mqttClient.publish(`${mqttTopicPrefix}/events`, JSON.stringify(data));
+        log.info(`Got a message sending to ${mqttTopicPrefix}/${payload.channelId}/events`);
+        await mqttClient.publish(`${mqttTopicPrefix}/${payload.channelId}/events`, JSON.stringify(data));
     });
 }
 
