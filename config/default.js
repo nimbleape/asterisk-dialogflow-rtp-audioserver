@@ -22,8 +22,8 @@ module.exports = {
         audioInputConfig: {
             audioEncoding: 'AUDIO_ENCODING_LINEAR_16',
             sampleRateHertz: 16000,
-            languageCode: 'en-US',
-            singleUtterance: true
+            languageCode: 'en',
+            singleUtterance: false
         },
         audioOutputConfig: {
             audioEncoding: 'OUTPUT_AUDIO_ENCODING_LINEAR_16',
