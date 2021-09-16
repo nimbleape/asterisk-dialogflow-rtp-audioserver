@@ -20,6 +20,9 @@ async function createNewGoogleStream(payload) {
     const dialogFlowConfig = {
         auth: config.get('dialogflow.auth'),
         projectId: config.get('dialogflow.project'),
+        location: config.get('dialogflow.location'),
+        agentId: config.get('dialogflow.agentId'),
+        apiEndpoint: config.get('dialogflow.apiEndpoint'),
         sessionId: payload.channelId,
         initialEventName: config.get('dialogflow.initialEventName'),
         enableOutputSpeech: config.get('dialogflow.enableOutputSpeech')
