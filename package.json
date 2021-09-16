@@ -11,10 +11,10 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@google-cloud/dialogflow-cx": "^2.13.0",
     "async-mqtt": "^2.4.2",
     "config": "^3.2.4",
     "dgram-as-promised": "^3.0.3",
-    "dialogflow": "^1.1.2",
     "krtp": "^3.0.0",
     "mqtt": "^3.0.0",
     "pino": "^5.14.0"
