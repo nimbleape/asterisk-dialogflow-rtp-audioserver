@@ -46,7 +46,7 @@ You'll need to ensure formats used by ARI Bridge and RTP Audioserver are in sync
 
 Changes in `default.js`
 
-```json
+```
 // default.js
 
 asterisk: {
@@ -54,7 +54,7 @@ asterisk: {
     audioByteSize: 320,
     packetTimestampDifference: 160,
     rtpPayloadType: 11
-},
+}
 ```
 
 Change Dialogflow Settings,
@@ -72,7 +72,7 @@ Mu-law is headerless single channel audio with a frequency of 8000 hertz and a b
 
 Changes in `default.js`
 
-```json
+```
 // default.js
 
 asterisk: {
@@ -80,7 +80,7 @@ asterisk: {
     audioByteSize: 160,
     packetTimestampDifference: 160,
     rtpPayloadType: 0
-},
+}
 ```
 
 Change Dialogflow Settings,
