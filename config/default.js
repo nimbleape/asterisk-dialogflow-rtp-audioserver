@@ -8,6 +8,16 @@ module.exports = {
         url: 'mqtt://test.mosquitto.org',
         prefix: 'dialogflow-asterisk'
     },
+    // used for playing back audio to asterisk
+    asterisk: {
+        format: 'slin16',
+        // size of audio chunks being sent to Asterisk
+        audioByteSize: 320,
+        // increment in timestamp field between consecutive RTP packets
+        packetTimestampIncrement: 160,
+        // check https://en.wikipedia.org/wiki/RTP_payload_formats
+        rtpPayloadType: 11
+    },
     dialogflow: {
         auth: {
             //credentials: {

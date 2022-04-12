@@ -22,7 +22,8 @@ async function createNewGoogleStream(payload) {
         projectId: config.get('dialogflow.project'),
         sessionId: payload.channelId,
         initialEventName: config.get('dialogflow.initialEventName'),
-        enableOutputSpeech: config.get('dialogflow.enableOutputSpeech')
+        enableOutputSpeech: config.get('dialogflow.enableOutputSpeech'),
+        asteriskConfig: config.get('asterisk')
     };
 
     let dialogflowConnector = new DialogFlowConnector({
